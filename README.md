@@ -14,9 +14,9 @@
 ## FACTORY | [reading material](https://refactoring.guru/design-patterns/factory-method) | [video material](https://www.youtube.com/watch?v=-1xgg7yUlUc&list=PLJbE2Yu2zumAKLbWO3E2vKXDlQ8LT_R28&index=3)
 - Factory Method is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
 
-1. The `Product` declares the interface, which is `common to all objects` that can be produced by the `creator` and its subclasses.
-2. `Concrete Products` are different implementations of the product interface.
-3. The Creator class declares the `factory method` that returns `new product objects`. It’s important that the return type of this method matches the product interface. You can declare the factory method as abstract to force all subclasses to implement their own versions of the method. As an alternative, the base factory method can return some default product type.
+1. The `Product` declares the interface, which is `common to all objects` that can be produced by the `creator` and its subclasses. (eg: `UserRepo interface`)
+2. `Concrete Products` are different implementations of the product interface. (eg: `userInMemoRepo, userMysqlRepo struct`)
+3. The Creator class declares the `factory method` that returns `new product objects`. It’s important that the return type of this method matches the product interface. You can declare the factory method as abstract to force all subclasses to implement their own versions of the method. As an alternative, the base factory method can return some default product type. (eg. `GetUserRepository`) 
 4. `Concrete Creators` override the base factory method so it returns a different type of product.
 ```
 Note that the factory method doesn’t have to create new instances all the time. It can also return existing objects from a cache, an object pool, or another source.

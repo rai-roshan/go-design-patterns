@@ -21,7 +21,7 @@ func main() {
 	// TODO : initalize user repo using [Factory pattern]
 	var userRepo user_repo.UserRepo
 	{
-		userRepo = respo_factory.GetUserRepository("inmemory")
+		userRepo = respo_factory.GetUserRepositoryFactory("inmemory")
 	}
 
 	// var financeService finance.FinanceService
