@@ -22,14 +22,14 @@ func NewLoggingMiddleware(log logger.Logger, next UserService) UserService {
 
 func (lm *loggingMiddleware) GetUserById(ctx context.Context, id uint32) (user user_domain.User, err error) {
 	defer func(instance time.Time) {
-		lm.log.Info(fmt.Sprintf("took: %d", time.Since(instance)))
+		lm.log.Info(fmt.Sprintf("took: %d || method: GetUserById, id: %d, err: %+v, user data: %+v", time.Since(instance), id, err, user))
 	}(time.Now())
 	return lm.next.GetUserById(ctx, id)
 }
 
 func (lm *loggingMiddleware) CreateUser(ctx context.Context, user user_domain.User) (err error) {
 	defer func(instance time.Time) {
-		lm.log.Info(fmt.Sprintf("took: %d", time.Since(instance)))
+		lm.log.Info(fmt.Sprintf("took: %d || method: CreateUser, user: %+v, err: %v", time.Since(instance), user, err))
 	}(time.Now())
 	return lm.next.CreateUser(ctx, user)
 }

@@ -24,10 +24,12 @@ func NewUserService(userRepo user_repo.UserRepo) UserService {
 }
 
 func (u *userService) GetUserById(ctx context.Context, id uint32) (user user_domain.User, err error) {
+	user, err = u.userRepo.GetUserById(id)
 	return
 }
 
 func (u *userService) CreateUser(ctx context.Context, user user_domain.User) (err error) {
+	err = u.userRepo.CreateUser(user)
 	return
 }
 

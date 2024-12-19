@@ -15,8 +15,15 @@ func NewUserMysqlRepo() user_repo.UserRepo {
 	} 
 }
 
-func (uIm *userMysqlRepo) GetUserById() {}
+func (uIm *userMysqlRepo) GetUserById(id uint32) (user user_domain.User, err error) {
+
+	return
+}
+
 func (uIm *userMysqlRepo) GetSubscribedUsers() {}
 func (uIm *userMysqlRepo) UnSubscribeUser() {}
 func (uIm *userMysqlRepo) ActivateUser() {}
-func (uIm *userMysqlRepo) CreateUser() {}
+
+func (uIm *userMysqlRepo) CreateUser(user user_domain.User) (err error) {
+	return nil;
+}

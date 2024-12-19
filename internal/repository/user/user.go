@@ -1,11 +1,13 @@
 package user
 
-// user_inmemory_repo "rai_design_pattern/internal/repository/inmemory"
+import (
+	user_domain "rai_design_pattern/internal/domain/user"
+)
 
 type UserRepo interface {
-	GetUserById()
+	GetUserById(id uint32) (user_domain.User, error)
 	GetSubscribedUsers()
 	UnSubscribeUser()
 	ActivateUser() // after OTP is updated
-	CreateUser()
+	CreateUser(user_domain.User) (error)
 }
