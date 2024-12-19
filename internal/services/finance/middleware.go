@@ -3,7 +3,7 @@ package finance
 import (
 	"fmt"
 	"time"
-	"rai_design_pattern/logger"
+	"rai_design_pattern/pkg/logger"
 )
 
 type loggingMiddleware struct {

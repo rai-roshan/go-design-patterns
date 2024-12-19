@@ -3,8 +3,8 @@ package user
 import (
 	"context"
 	"fmt"
-	user_domain "rai_design_pattern/domain/user"
-	"rai_design_pattern/logger"
+	user_domain "rai_design_pattern/internal/domain/user"
+	"rai_design_pattern/pkg/logger"
 	"time"
 )
 

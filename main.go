@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
-	"rai_design_pattern/logger"
-	"rai_design_pattern/services/finance"
-	"rai_design_pattern/services/user"
-	user_repo "rai_design_pattern/repository/user"
-	user_domain "rai_design_pattern/domain/user"
+	"rai_design_pattern/pkg/logger"
+	"rai_design_pattern/internal/services/finance"
+	"rai_design_pattern/internal/services/user"
+	user_repo "rai_design_pattern/internal/repository/user"
+	user_domain "rai_design_pattern/internal/domain/user"
+	respo_factory "rai_design_pattern/internal/repository/factory"
 )
 
 func main() {
@@ -16,6 +17,10 @@ func main() {
 
 	// TODO : initalize user repo using [Factory pattern]
 	var userRepo user_repo.UserRepo
+	{
+		userRepo = respo_factory.GetUserRepository("inmemory")
+	}
+
 
 	var financeService finance.FinanceService
 	{

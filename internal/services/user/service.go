@@ -2,8 +2,8 @@ package user
 
 import (
 	"context"
-	user_domain "rai_design_pattern/domain/user"
-	user_repo "rai_design_pattern/repository/user"
+	user_domain "rai_design_pattern/internal/domain/user"
+	user_repo "rai_design_pattern/internal/repository/user"
 )
 
 type UserService interface {
